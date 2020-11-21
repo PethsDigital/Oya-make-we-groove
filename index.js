@@ -106,8 +106,8 @@ function closeModal() {
 form.addEventListener("submit", (e) => {
     let msg;
     btn.textContent = "loading...";
+    msg = document.createElement('p');
     setTimeout(() => {
-        msg = document.createElement('p');
         msg.innerHTML = '&check; &nbsp; Your registration has been submitted, Thank you';
         msg.className = 'msg';
         form.appendChild(msg);
@@ -121,7 +121,7 @@ form.addEventListener("submit", (e) => {
     }, 3000);
     setTimeout(() => {
         closeModal();
-        form.removeChild(msg);
+        msg.style.display = "none";
     }, 7000);
     e.preventDefault();
 });
