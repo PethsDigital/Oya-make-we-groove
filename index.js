@@ -104,10 +104,10 @@ function closeModal() {
 
 //form submit function
 form.addEventListener("submit", (e) => {
-
+    let msg;
     btn.textContent = "loading...";
     setTimeout(() => {
-        let msg = document.createElement('p');
+        msg = document.createElement('p');
         msg.innerHTML = '&check; &nbsp; Your registration has been submitted, Thank you';
         msg.className = 'msg';
         form.appendChild(msg);
