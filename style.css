@@ -40,7 +40,7 @@ header {
   width: 100vw;
   max-height: 600px;
   min-height: 550px;
-  background: url("/images/header.png") no-repeat center center;
+  background: url("images/header.png") no-repeat center center;
   background-size: 100% 100%;
   position: relative;
 }
@@ -237,7 +237,7 @@ section h3::after {
 }
 
 .about-img {
-  background: url("/images/about.png") no-repeat center center;
+  background: url("images/about.png") no-repeat center center;
 }
 .img-border {
   background-size: 100% 100%;
@@ -346,16 +346,16 @@ section h3::after {
   width: 20%;
 }
 .box1 {
-  background: url("/images/attendee1.png") center center;
+  background: url("images/attendee1.png") center center;
 }
 .box2 {
-  background: url("/images/attendee2.png") center center;
+  background: url("images/attendee2.png") center center;
 }
 .box3 {
-  background: url("/images/attendee3.png") center center;
+  background: url("images/attendee3.png") center center;
 }
 .box4 {
-  background: url("/images/attendee4.png") center center;
+  background: url("images/attendee4.png") center center;
 }
 .btn-wrap {
   text-align: center;
