@@ -86,7 +86,7 @@ $('#dark-mode-toggle').addEventListener('click', e => {
 let form = $('.registration-form');
 let overlay = $('.overlay');
 let registerBtn = $$('.register');
-let closeForm = $(".registration-form i");
+let closeForm = $(".registration-form a");
 let btn = document.querySelector(".register-btn");
 
 Array.from(registerBtn).forEach(btn => btn.addEventListener('click', _ => {
@@ -106,12 +106,12 @@ function closeModal() {
 form.addEventListener("submit", (e) => {
 
     btn.textContent = "loading...";
-    let msg = document.createElement('p');
-    msg.innerHTML = '&check; &nbsp; Your registration has been submitted, Thank you';
-    msg.className = 'msg';
     setTimeout(() => {
+        let msg = document.createElement('p');
+        msg.innerHTML = '&check; &nbsp; Your registration has been submitted, Thank you';
+        msg.className = 'msg';
+        form.appendChild(msg);
         btn.textContent = "Register";
-        form.insertBefore(msg, form.children[2]);
         // clear inputs on submit
         let inputs = document.querySelectorAll("input");
         Array.from(inputs).forEach((input) => {

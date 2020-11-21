@@ -7,7 +7,7 @@
   --img-bg: #7cfef0;
   --text-color: #000;
 }
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   body {
     --bg-color: #0f1011;
     --sec-color: #18181a;
@@ -15,7 +15,7 @@
     --img-bg: #000;
     --text-color: #e7e7e7;
   }
-}
+} */
 .dark-scheme {
   --bg-color: #0f1011;
   --sec-color: #18181a;
@@ -38,10 +38,9 @@ a {
 }
 header {
   width: 100vw;
-  max-height: 600px;
-  min-height: 550px;
+  height: 600px;
   background: url("images/header.png") no-repeat center center;
-  background-size: 100% 100%;
+  background-size: cover;
   position: relative;
 }
 .nav1,
@@ -62,7 +61,7 @@ header {
   top: 0;
   z-index: 80;
   left: 50%;
-  padding: 1.5rem 0;
+  padding-top: 0.5rem;
   transform: translateX(-50%);
 }
 .nav2 {
@@ -92,18 +91,18 @@ header {
 i.fa-bars {
   display: none;
   font-size: 1.5rem;
-  color: var(--text-color);
+  color: white;
 }
 .nav2 i,
-.registration-form i {
+.registration-form .fa-times {
   position: absolute;
   top: 1rem;
+  z-index: 120;
   right: 1rem;
   font-size: 1.5rem;
-}
-.nav2 i {
   color: var(--text-color);
 }
+
 .nav-btn,
 .header-btn {
   background-color: var(--pri-color);
@@ -157,8 +156,14 @@ i.fa-bars {
   margin: 1rem;
   font-size: 0.8rem;
 }
-.time {
+.time-capsule {
   margin: 2rem 1.5rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: center;
+}
+.time {
   background-color: #7cfef0;
   border-radius: 7px;
   padding: 0.65rem;
@@ -170,7 +175,6 @@ i.fa-bars {
   -ms-user-select: none;
   user-select: none;
 }
-.time::after,
 .wrapper .img-border::before {
   content: "";
   position: absolute;
@@ -179,18 +183,6 @@ i.fa-bars {
   font-size: 0.8rem;
   transform: translateX(-50%);
   color: white;
-}
-.time.days::after {
-  content: "Days";
-}
-.time.hrs::after {
-  content: "Hours";
-}
-.time.min::after {
-  content: "Min";
-}
-.time.sec::after {
-  content: "Sec";
 }
 
 /* about section */
@@ -247,7 +239,9 @@ section h3::after {
 .about-img {
   width: 35%;
   height: 30vh;
-  max-height: 250px;
+  max-height: 350px;
+  min-height: 200px;
+  max-width: 400px;
   position: relative;
 }
 
@@ -313,8 +307,6 @@ section h3::after {
 .img-box {
   margin: 0 1rem;
   background-size: 100% 100%;
-  min-width: 25%;
-  height: 200px;
   border: 3.5px solid var(--img-border);
   background-color: var(--img-bg);
 }
@@ -341,6 +333,8 @@ section h3::after {
   align-items: center;
 }
 .wrapper .img-border {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
   position: relative;
   height: 200px;
   width: 20%;
@@ -372,10 +366,17 @@ section h3::after {
   transform: none;
   bottom: -3rem;
 }
-@media (max-width: 320px) {
+@media (max-width: 411px) {
   .wrapper .img-border::before {
     font-size: 0.9rem;
   }
+  .wrapper .img-border {
+    width: 75% !important;
+    margin: 1.5rem auto !important;
+  }
+  /* .img-box {
+    width: 50vw !important;
+  } */
 }
 .wrapper .img-border {
   margin-bottom: 2.8rem !important;
@@ -396,9 +397,9 @@ section h3::after {
 /* gallery */
 .gallery-wrap {
   display: grid;
-  width: 90%;
+  width: 80%;
   height: 80vh;
-  min-height: 600px;
+  min-height: 500px;
   margin: 1rem auto 2rem auto;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "img1 img2" "img3 img4" "img3 img5";
@@ -406,6 +407,7 @@ section h3::after {
 }
 .gallery-wrap img {
   width: 100%;
+  justify-self: center;
   height: 100%;
 }
 .img1 {
@@ -428,7 +430,8 @@ section h3::after {
 .video {
   width: 100%;
   display: block;
-  height: 40vh;
+  height: 45vh;
+  min-height: 250px;
   margin: 2rem auto;
   object-fit: cover;
 }
@@ -474,7 +477,7 @@ section#sponsors {
   width: 90vw;
   border-radius: 10px;
   max-width: 500px;
-  padding: 1.5rem;
+  padding: 1.5rem 0.5rem;
   max-height: 95vh;
   transform-origin: center;
   overflow-y: auto;
@@ -486,7 +489,7 @@ section#sponsors {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 60;
+  z-index: 110;
   background-color: rgba(0, 0, 0, 0.637);
   width: 100vw;
   height: 100vh;
@@ -632,8 +635,11 @@ footer a:hover {
     background-color: var(--sec-color);
     border: none;
   }
-  .time {
+  .time-capsule {
     margin: 2rem 0.9rem;
+  }
+  .header-content {
+    height: auto;
   }
   .header-content h1 {
     margin: 1rem 0.6rem;
@@ -653,7 +659,7 @@ footer a:hover {
   }
   .img-box {
     margin: 0 0.7rem;
-    min-width: 37%;
+    min-width: 42%;
   }
   .wrapper .img-border {
     width: 36%;
@@ -661,6 +667,9 @@ footer a:hover {
   }
   .sponsors-wrap img {
     width: 20%;
+  }
+  .gallery-wrap {
+    max-height: 375px;
   }
   footer p {
     margin-top: 0.5rem;
