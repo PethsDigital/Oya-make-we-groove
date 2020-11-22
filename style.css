@@ -378,46 +378,61 @@ section h3::after {
 }
 
 /* gallery */
+
 .container {
   position: relative;
+  padding-top: 76%;
+  margin: 1rem auto;
+  width: 78vw;
+  max-width: 600px;
   height: 0;
-  padding-bottom: 55%;
 }
 .gallery-wrap {
-  display: grid;
-  width: 65%;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 100%;
-  margin: 1rem auto 2rem auto;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-areas: "img1 img2" "img3 img4" "img3 img5";
-  grid-gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: stretch;
+  height: 95%;
 }
-.gallery-wrap img {
-  width: 100%;
-  justify-self: flex-end;
-  height: 100%;
+.top-img,
+.bottom-img,
+.small-img {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.top-img {
+  height: 35%;
+}
+.bottom-img {
+  height: 73%;
+}
+.small-img {
+  flex-direction: column;
+  align-items: flex-end;
 }
 
-.img1 {
-  grid-area: img1;
+.long-img,
+.small-img {
+  width: 50%;
 }
-.img2 {
-  grid-area: img2;
+.top-img img {
+  width: 48%;
+  height: 95%;
 }
-.img3 {
-  grid-area: img3;
+.long-img img {
+  width: 97%;
+  height: 100%;
 }
-.img4 {
-  grid-area: img4;
-}
-.img5 {
-  grid-area: img5;
+.small-img img {
+  width: 97%;
+  height: 48%;
 }
 
 /* videos */
@@ -691,13 +706,10 @@ footer a:hover {
     object-fit: contain;
   }
   .container {
-    padding-bottom: 175%;
+    padding-top: 90%;
   }
   .gallery-wrap {
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    grid-template-areas: "img1 img1" "img2 img3" "img4 img4" "img5 img5";
-    width: 80%;
-    max-width: 600px;
+    height: 100%;
   }
 
   footer p {
