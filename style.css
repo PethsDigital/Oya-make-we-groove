@@ -394,6 +394,7 @@ section h3::after {
   height: 100%;
   margin: 1rem auto 2rem auto;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas: "img1 img2" "img3 img4" "img3 img5";
   grid-gap: 15px;
 }
@@ -693,6 +694,7 @@ footer a:hover {
     padding-bottom: 175%;
   }
   .gallery-wrap {
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: "img1 img1" "img2 img3" "img4 img4" "img5 img5";
     width: 80%;
     max-width: 600px;
