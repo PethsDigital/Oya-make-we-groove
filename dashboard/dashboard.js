@@ -4,7 +4,7 @@ const $$ = el => document.querySelectorAll(el);
 
 // navbar toggle function
 let nav = $("nav.side-nav");
-let navLinks = $$(".side-nav a");
+let navLinks = $$(".side-nav a, .overlay");
 let bars = $(".fa.fa-bars");
 let overlay = $(".overlay");
 

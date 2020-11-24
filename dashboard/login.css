@@ -112,6 +112,7 @@ input,
   margin: 0.4rem 0;
   width: 100%;
   transition: 0.5s;
+  color: var(--text-color);
   background-color: var(--sec-color);
 }
 .register-btn {
@@ -132,6 +133,7 @@ input:focus {
   color: var(--invert-bg);
   position: fixed;
   top: 2rem;
+  font-family: "MuseoModerno";
   right: 2rem;
   padding: 0.5rem 0.7rem;
   border-radius: 7px;

@@ -97,6 +97,7 @@ nav.side-nav {
 .fa.fa-bars {
   display: none;
   font-size: 1.5rem;
+  color: var(--text-color);
 }
 
 .fa.fa-times {
