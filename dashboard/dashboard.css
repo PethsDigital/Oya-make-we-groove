@@ -3,7 +3,7 @@
   --pri-color: #7cfef0;
   --bg-color: #fff;
   --sec-color: #e7e7e7;
-  --active-border: #00110f;
+  --active-border: #001b18;
   --active-bg: rgba(124, 254, 241, 0.39);
   --invert-bg: #7cfef0;
   --invert-border: #000;
@@ -42,6 +42,7 @@ a {
 button {
   outline: none;
   cursor: pointer;
+  font-family: "MuseoModerno";
 }
 
 /* nav */
@@ -108,7 +109,7 @@ nav.side-nav {
 /* main */
 main.container {
   width: 73%;
-  height: 120vh;
+  height: auto;
   overflow-x: hidden;
   position: relative;
 }
@@ -150,6 +151,7 @@ main.container {
 }
 .filter-btn.active {
   background: var(--active-bg);
+  color: #001b18;
 }
 
 /* table */
@@ -189,14 +191,10 @@ table td {
     min-width: 250px;
     animation: shownav 0.5s ease forwards;
     z-index: 10;
-    transition: clip-path 0.5s;
+    transition: clip-path 0.3s;
     position: fixed;
   }
-  /* @keyframes shownav {
-    to {
-      transform: translateX(0);
-    }
-  } */
+
   .overlay {
     content: "";
     width: 100%;

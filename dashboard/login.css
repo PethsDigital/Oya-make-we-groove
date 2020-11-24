@@ -22,6 +22,7 @@
 body {
   background: url("../images/login-bg.png") no-repeat center center;
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   width: 100vw;
   font-family: "MuseoModerno";
@@ -29,6 +30,7 @@ body {
 }
 button {
   outline: none;
+  font-family: "MuseoModerno";
 }
 ::placeholder {
   font-family: "MuseoModerno";
@@ -133,12 +135,10 @@ input:focus {
   color: var(--invert-bg);
   position: fixed;
   top: 2rem;
-  font-family: "MuseoModerno";
   right: 2rem;
   padding: 0.5rem 0.7rem;
   border-radius: 7px;
   border: none;
-  font-size: 0.7rem;
   margin-left: 1rem;
   cursor: pointer;
   transition: 0.5s;

@@ -1,0 +1,89 @@
+{
+    "data": {
+        "registrants": [
+            {
+                "_id": "5fba780fe39e68413028d8a5",
+                "firstName": "hjsjbr",
+                "lastName": "jndbege",
+                "email": "kreo@gmail.com",
+                "createdAt": "2020-11-09T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbabf3932d3ab11be76a891",
+                "firstName": "mfjfhn",
+                "lastName": "nhhh",
+                "email": "emmanuel@gmail.com",
+                "companyName": "z",
+                "jobTitle": "backend developer",
+                "createdAt": "2020-11-05T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbcad3a92fc1914f217e565",
+                "firstName": "jjdnn ",
+                "lastName": "jheegw",
+                "email": "geek@mail.com",
+                "companyName": "jjtjjkr",
+                "jobTitle": "hypeman",
+                "createdAt": "2020-11-05T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbcad4192fc1914f217e566",
+                "firstName": "emmanjerjkjkuel",
+                "lastName": "jktjkrjk",
+                "email": "kruse@mail.com",
+                "companyName": "kmrsjka",
+                "jobTitle": "hypeman",
+                "createdAt": "2020-11-02T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbcad4d92fc1914f217e567",
+                "firstName": "jej",
+                "lastName": "herhhh",
+                "email": "omo@mail.com",
+                "companyName": "gotjrjkkrals",
+                "jobTitle": "hypeman",
+                "createdAt": "2020-11-03T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbcad5a92fc1914f217e568",
+                "firstName": "fg",
+                "lastName": "hrheh",
+                "email": "bigman@mail.com",
+                "companyName": "mtmjjktja",
+                "jobTitle": "hypeman",
+                "createdAt": "2020-11-01T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbcad5a92fc1914f217e568",
+                "firstName": "ac",
+                "lastName": "ad",
+                "email": "bigman@mail.com",
+                "companyName": "b",
+                "jobTitle": "hypeman",
+                "createdAt": "2020-11-08T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbcad5a92fc1914f217e568",
+                "firstName": "am",
+                "lastName": "ac",
+                "email": "bigman@mail.com",
+                "companyName": "c",
+                "jobTitle": "hypeman",
+                "createdAt": "2020-11-09T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbcad5a92fc1914f217e568",
+                "firstName": "ac",
+                "lastName": "am",
+                "email": "bigman@mail.com",
+                "companyName": "d",
+                "jobTitle": "hypeman",
+                "createdAt": "2020-11-07T20:23:01.804Z"
+            }
+        ],
+        "currentPage": 1,
+        "totalPages": 1,
+        "totalRecords": 6
+    },
+    "errors": null
+}

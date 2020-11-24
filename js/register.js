@@ -8,14 +8,14 @@ const btn = $(".register-btn");
 
 
 // function to handle msg
-function displayMsg(type) {
+function displayMsg(type, res) {
     let msg;
     msg = document.createElement('p');
     msg.className = 'msg';
     registrationForm.appendChild(msg);
     Array.from($$(".registration-form input")).forEach((input) => input.value = "");
     if (type === "success") {
-        msg.innerHTML = `&check; &nbsp; ${result.message}`;
+        msg.innerHTML = `&check; &nbsp; ${res.message}`;
     } else {
         msg.innerHTML = '&#9888; &nbsp; An error occured, pls try again later';
         msg.style.background = "rgba(248, 20, 3, 0.658)"
@@ -56,7 +56,7 @@ registrationForm.addEventListener("submit", (e) => {
     })
         .then(res => res.json())
         .then(result => {
-            displayMsg("success");
+            displayMsg("success", result);
         })
         .catch(err => {
             console.log(err);
