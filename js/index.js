@@ -70,24 +70,11 @@ window.addEventListener('scroll', _ => {
 openToggle.addEventListener('click', _ => navbar.style.cssText = 'clip-path: circle(100%);');
 Array.from(navLink).forEach(link => link.addEventListener('click', _ => navbar.style.cssText = " clip-path: circle(0% at 100% 0);"));
 
-// darkmode toggle
-$('#dark-mode-toggle').addEventListener('click', e => {
-    document.body.classList.toggle('dark-scheme');
-    document.body.style.transition = 'all .5s linear';
-    if (document.body.className.includes('dark-scheme')) {
-        $('#dark-mode-toggle').innerHTML = '<i class="fa fa-sun"></i> Light';
-    } else {
-        $('#dark-mode-toggle').innerHTML = '<i class="fa fa-moon"></i> Dark';
-
-    }
-});
-
 // form display
 let form = $('.registration-form');
 let overlay = $('.overlay');
 let registerBtn = $$('.register');
 let closeForm = $(".registration-form a");
-let btn = document.querySelector(".register-btn");
 
 Array.from(registerBtn).forEach(btn => btn.addEventListener('click', _ => {
     form.style.transform = 'translate(-50%, -50%) scale(1)';
@@ -102,26 +89,3 @@ function closeModal() {
 }
 
 
-//form submit function
-form.addEventListener("submit", (e) => {
-    let msg;
-    btn.textContent = "loading...";
-    msg = document.createElement('p');
-    setTimeout(() => {
-        msg.innerHTML = '&check; &nbsp; Your registration has been submitted, Thank you';
-        msg.className = 'msg';
-        form.appendChild(msg);
-        btn.textContent = "Register";
-        // clear inputs on submit
-        let inputs = document.querySelectorAll("input");
-        Array.from(inputs).forEach((input) => {
-            if (input.type.toLowerCase() == "radio") input.checked = false;
-            else input.value = "";
-        });
-    }, 3000);
-    setTimeout(() => {
-        closeModal();
-        msg.style.display = "none";
-    }, 7000);
-    e.preventDefault();
-});

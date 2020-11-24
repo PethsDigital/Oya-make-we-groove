@@ -113,7 +113,7 @@ i.fa-bars {
   font-size: 0.7rem;
   transition: 0.5s;
 }
-#dark-mode-toggle {
+.dark-mode-btn {
   padding: 0.5rem 0.6rem;
   background: black;
   color: white;
@@ -123,7 +123,7 @@ i.fa-bars {
   outline: none;
   font-size: 0.8rem;
 }
-#dark-mode-toggle i {
+.dark-mode-btn i {
   font-size: 1rem;
 }
 .header-btn {
@@ -440,10 +440,10 @@ section h3::after {
   width: 100%;
   display: block;
   height: 45vh;
-  min-height: 250px;
+  min-height: 300px;
   margin: 2rem auto;
-  -o-object-fit: cover;
-  object-fit: cover;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 /* sponsors */
@@ -501,7 +501,7 @@ section#sponsors {
   top: 0;
   left: 0;
   z-index: 110;
-  background-color: rgba(0, 0, 0, 0.637);
+  background-color: rgba(0, 0, 0, 0.479);
   width: 100vw;
   height: 100vh;
 }
@@ -511,13 +511,13 @@ section#sponsors {
 }
 .msg {
   background-color: rgba(4, 182, 4, 0.781);
-  border-radius: 10px;
+  border-radius: 5px;
   color: white;
   margin: 0.5rem auto;
   transform: scaleY(0);
   padding: 0.5rem 1rem;
   transform-origin: top;
-  width: 95%;
+  width: 90%;
   display: block;
   -webkit-animation: msg 0.5s ease forwards;
   animation: msg 0.5s ease forwards;
@@ -706,7 +706,7 @@ footer a:hover {
     object-fit: contain;
   }
   .container {
-    padding-top: 90%;
+    padding-top: 430px;
   }
   .gallery-wrap {
     height: 100%;

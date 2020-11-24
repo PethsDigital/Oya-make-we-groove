@@ -1,0 +1,143 @@
+:root {
+  scroll-behavior: smooth;
+  --pri-color: #7cfef0;
+  --bg-color: #fff;
+  --sec-color: #e7e7e7;
+  --invert-bg: #7cfef0;
+  --invert-color: #000;
+  --text-color: #000;
+}
+.dark-scheme {
+  --bg-color: #0f1011;
+  --sec-color: #18181a;
+  --text-color: #e7e7e7;
+  --invert-color: rgba(124, 254, 241, 0.959);
+  --invert-bg: #000;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url("../images/login-bg.png") no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  font-family: "MuseoModerno";
+  overflow: hidden;
+}
+button {
+  outline: none;
+}
+::placeholder {
+  font-family: "MuseoModerno";
+}
+.login-form {
+  position: fixed;
+  z-index: 150;
+  background-color: var(--bg-color);
+  top: 50%;
+  color: var(--text-color);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: auto;
+  min-height: 400px;
+  width: 94vw;
+  border-radius: 10px;
+  max-width: 370px;
+  padding: 1.5rem 0.5rem;
+  max-height: 95vh;
+  transform-origin: center;
+  overflow-y: auto;
+}
+
+@media (max-height: 400px) {
+  .login-form {
+    height: auto;
+    min-height: none;
+  }
+}
+
+.login-form .img-wrap {
+  height: 70px;
+  width: 170px;
+  margin: 1.5rem auto 2rem auto;
+}
+.img-wrap img {
+  height: 100%;
+  width: 100%;
+}
+.msg {
+  background-color: rgba(4, 182, 4, 0.781);
+  border-radius: 5px;
+  color: white;
+  margin: 0.5rem auto;
+  transform: scaleY(0);
+  padding: 0.5rem 1rem;
+  transform-origin: top;
+  width: 90%;
+  display: block;
+  -webkit-animation: msg 0.5s ease forwards;
+  animation: msg 0.5s ease forwards;
+}
+@-webkit-keyframes msg {
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes msg {
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.form-wrap {
+  margin: 3rem auto 2rem auto;
+}
+.input-wrap {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  margin: 0.3rem auto;
+  width: 90%;
+}
+
+input,
+.register-btn {
+  height: 45px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding-left: 0.7rem;
+  margin: 0.4rem 0;
+  width: 100%;
+  transition: 0.5s;
+  background-color: var(--sec-color);
+}
+.register-btn {
+  background-color: var(--invert-bg);
+  color: var(--invert-color);
+  margin: 1rem 0;
+  font-size: large;
+  font-family: "MuseoModerno";
+}
+input:focus {
+  outline: none;
+  border: 2px solid var(--pri-color);
+  border-radius: 7px;
+  box-shadow: 0px 0px 8px #a5d6d1;
+}
+.dark-mode-btn {
+  background-color: var(--invert-color);
+  color: var(--invert-bg);
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 7px;
+  border: none;
+  font-size: 0.7rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+}

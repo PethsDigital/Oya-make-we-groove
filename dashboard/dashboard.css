@@ -1,0 +1,237 @@
+:root {
+  scroll-behavior: smooth;
+  --pri-color: #7cfef0;
+  --bg-color: #fff;
+  --sec-color: #e7e7e7;
+  --active-border: #00110f;
+  --active-bg: rgba(124, 254, 241, 0.39);
+  --invert-bg: #7cfef0;
+  --invert-border: #000;
+  --text-color: #000;
+}
+.dark-scheme {
+  --bg-color: #0f1011;
+  --sec-color: #18181a;
+  --text-color: #e7e7e7;
+  --active-border: #25f1dd;
+  --active-bg: rgba(124, 254, 241, 0.712);
+  --invert-border: rgba(124, 254, 241, 0.959);
+  --invert-bg: #000;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-color);
+  font-family: "MuseoModerno";
+  color: var(--text-color);
+  overflow-x: hidden;
+  display: flex;
+  width: 100vw;
+  justify-content: space-between;
+  font-size: 15px;
+}
+::placeholder {
+  font-family: "MuseoModerno";
+}
+a {
+  text-decoration: none;
+}
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+/* nav */
+nav.side-nav {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100vh;
+  overflow: hidden;
+  padding: 1.5rem 1rem 1rem 0;
+  background: var(--bg-color);
+}
+.side-nav .logo {
+  width: 70%;
+  max-width: 130px;
+  height: 60px;
+  margin: 1rem auto;
+}
+
+.logo img {
+  height: 100%;
+  width: 100%;
+}
+
+.side-nav .nav-menu {
+  list-style: none;
+  margin: 2rem 0;
+  width: 100%;
+}
+
+.nav-menu li {
+  width: 100%;
+  padding: 0.9rem;
+  margin: 1rem auto;
+  font-size: 0.9rem;
+  transition: 0.5;
+}
+
+.nav-item a {
+  color: var(--active-border);
+  display: block;
+}
+
+.nav-menu .active {
+  background: var(--active-bg);
+  border-left: 5px solid var(--active-border);
+}
+.nav-menu .active a {
+  color: #012723;
+}
+.fa.fa-times,
+.fa.fa-bars {
+  display: none;
+  font-size: 1.5rem;
+}
+
+.fa.fa-times {
+  right: 1rem;
+  position: absolute;
+  top: 1rem;
+}
+/* main */
+main.container {
+  width: 73%;
+  height: 120vh;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.container .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 2rem 1.5rem 0;
+}
+.container .header button {
+  background-color: var(--invert-border);
+  color: var(--invert-bg);
+  padding: 0.5rem 0.7rem;
+  border-radius: 7px;
+  border: none;
+  font-size: 0.7rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.filter-wrap {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.filter-btn {
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: var(--sec-color);
+  color: var(--text-color);
+  border-radius: 7px;
+}
+.filter-wrap h4 {
+  margin-right: 2rem;
+}
+.filter-btn.active {
+  background: var(--active-bg);
+}
+
+/* table */
+.table-wrap {
+  overflow-x: auto;
+  white-space: nowrap;
+  width: 100%;
+  /* display: block; */
+}
+table.people {
+  /* max-width: fit-content; */
+  width: 100%;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+table th,
+table td {
+  padding: 10px 10px 10px 1px;
+}
+
+.heading th {
+  color: var(--active-border);
+  font-weight: 700;
+  padding-bottom: 1rem;
+}
+
+table td {
+  color: var(--text-color);
+}
+
+@media only screen and (max-width: 800px) {
+  nav.side-nav {
+    display: block;
+    width: 50vw;
+    clip-path: inset(0 100% 0 0);
+    min-width: 250px;
+    animation: shownav 0.5s ease forwards;
+    z-index: 10;
+    transition: clip-path 0.5s;
+    position: fixed;
+  }
+  /* @keyframes shownav {
+    to {
+      transform: translateX(0);
+    }
+  } */
+  .overlay {
+    content: "";
+    width: 100%;
+    position: fixed;
+    display: none;
+    left: 0;
+    right: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.438);
+  }
+
+  main.container {
+    width: 97%;
+    margin: auto;
+  }
+  .filter-btn {
+    margin: 0.5rem 0.1rem;
+  }
+  .fa.fa-times,
+  .fa.fa-bars {
+    display: inline;
+  }
+  .fa.fa-bars {
+    margin-right: 1rem;
+  }
+  .header .right {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .container .header {
+    padding-right: 0.6rem;
+  }
+  .container .header button {
+    margin-left: 0.5rem;
+  }
+}
