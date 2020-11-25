@@ -79,10 +79,19 @@
                 "companyName": "d",
                 "jobTitle": "hypeman",
                 "createdAt": "2020-11-07T20:23:01.804Z"
+            },
+            {
+                "_id": "5fbcad5a92fc1914f217e568",
+                "firstName": "ac",
+                "lastName": "am",
+                "email": "bigman@mail.com",
+                "companyName": "d",
+                "jobTitle": "hypeman",
+                "createdAt": "2020-11-07T20:23:01.804Z"
             }
         ],
         "currentPage": 1,
-        "totalPages": 1,
+        "totalPages": 2,
         "totalRecords": 6
     },
     "errors": null

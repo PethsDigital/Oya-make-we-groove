@@ -36,7 +36,10 @@ body {
 a {
   text-decoration: none;
 }
-
+button {
+  outline: none;
+  font-family: "MuseoModerno";
+}
 header {
   width: 100vw;
   height: 600px;

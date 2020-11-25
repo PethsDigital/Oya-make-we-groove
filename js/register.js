@@ -27,36 +27,44 @@ function displayMsg(type, res) {
     }, 4000);
 }
 
+
+// grab elements
+const firstNameInput = $("#first-name");
+const lastNameInput = $("#last-name");
+const emailInput = $("#email");
+const jobInput = $("#job");
+const companyInput = $("#company");
+
+
+
 //form submit function
 registrationForm.addEventListener("submit", (e) => {
     // dosable btn
     btn.textContent = "loading...";
     btn.disabled = true;
 
-    // grab elements
-    const firstNameInput = $("#first-name");
-    const lastNameInput = $("#last-name");
-    const emailInput = $("#email");
-    const jobInput = $("#job");
-    const companyInput = $("#company");
+    let formValues = {
+        firstName: firstNameInput.value,
+        lastName: lastNameInput.value,
+        email: emailInput.value,
+        companyName: companyInput.value,
+        jobTitle: jobInput.value
+    }
 
     // fetch request
     fetch("https://omwg.herokuapp.com/register", {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json; charset-UTF-8'
+            'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify({
-            firstName: firstNameInput.value,
-            lastname: lastNameInput.value,
-            email: emailInput.value,
-            companyName: companyInput.value,
-            jobTitle: jobInput.value
-        })
+        body: JSON.stringify(formValues),
+        redirect: 'follow'
     })
         .then(res => res.json())
         .then(result => {
             displayMsg("success", result);
+            console.log(formValues);
+            console.log(result)
         })
         .catch(err => {
             console.log(err);

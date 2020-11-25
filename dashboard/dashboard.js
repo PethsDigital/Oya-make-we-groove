@@ -25,14 +25,25 @@ let sortByDate = $(".filter-btn.date");
 let sortByName = $(".filter-btn.name");
 let sortByCompany = $(".filter-btn.company");
 let sortBtn = Array.from($$(".filter-btn"));
+let pageCount = 1;
+let jsonData;
+// let url = `https://omwg.herokuapp.com/register?limit=10&page=${pageCount}`;
 
-// switch active class onclick of each button
+
+// fetch function
+function fetchData() {
+    let url = `./sample${pageCount}.json`;
+    return fetch(url)
+        .then(res => res.json())
+        .then(json => json.data)
+        .catch(err => console.log(err));
+};
+
+// switch active class onclick of each sort button
 sortBtn.forEach(btn => btn.addEventListener('click', e => {
     sortBtn.forEach(btn => btn.classList.remove('active'));
     e.target.classList.add('active');
-
 }))
-
 
 // template for data
 function UIDatatemplate(user) {
@@ -45,33 +56,18 @@ function UIDatatemplate(user) {
                     <td>${user.createdAt.substr(0, 10)}</td>`;
     table.appendChild(tr);
     return tr.innerHTML;
-}
+};
 
-
-// init func to show data normally by default while also storing it in a variable for further manipulation
-let jsonData;
-fetch("https://omwg.herokuapp.com/register/")
-    .then(res => res.json())
-    .then(json => {
-        table.innerHTML = '';
-        json.data.registrants.forEach(registrant => {
-            UIDatatemplate(registrant);
-        });
-        jsonData = json;
-    })
-    .catch(err => console.log(err));
-
-// function to show default on click of all btn
+// function to show default
 function showAll() {
-    fetch("https://omwg.herokuapp.com/register/")
-        .then(res => res.json())
-        .then(json => {
+    fetchData()
+        .then(data => {
             table.innerHTML = '';
-            json.data.registrants.forEach(registrant => {
+            data.registrants.forEach(registrant => {
                 UIDatatemplate(registrant);
+                jsonData = data;
             });
-        })
-        .catch(err => console.log(err));
+        });
 };
 
 // sort order for string type properties on json data
@@ -89,7 +85,7 @@ function sortType(prop) {
 // sort all string values
 function sortStr(prop) {
     table.innerHTML = '';
-    jsonData.data.registrants
+    jsonData.registrants
         .sort(sortType(prop))
         .forEach(registrant => {
             UIDatatemplate(registrant);
@@ -99,17 +95,37 @@ function sortStr(prop) {
 // sort by date
 function sortDate(prop) {
     table.innerHTML = '';
-    jsonData.data.registrants
+    jsonData.registrants
         .sort((a, b) => new Date(a.createdAt).getTime() - new Date(b.createdAt).getTime())
         .forEach(registrant => {
             UIDatatemplate(registrant);
         })
 };
 
+// show and sort functions invoked
+showAll();
 sortByAll.addEventListener('click', showAll);
 sortByDate.addEventListener('click', sortDate);
 sortByName.addEventListener('click', _ => sortStr("firstName"));
 sortByCompany.addEventListener('click', _ => sortStr("companyName"));
+
+let next = $(".next");
+let prev = $(".prev");
+let nextLinks = Array.from($$(".next-links a"));
+let nextPrev = Array.from($$(".footer button"));
+
+next.addEventListener('click', (e) => {
+    pageCount === jsonData.totalPages ? pageCount = 1 : pageCount++;
+    showAll();
+});
+
+prev.addEventListener('click', (e) => {
+    pageCount === 1 ? pageCount = jsonData.totalPages : pageCount--;
+    showAll();
+});
+
+
+
 
 // fetch("https://omwg.herokuapp.com/register/download")
 //     .then(res => res.json())
