@@ -8,16 +8,16 @@ const btn = $(".register-btn");
 
 
 // function to handle msg
-function displayMsg(type, msg) {
+function displayMsg(type, resMsg) {
     let msg;
     msg = document.createElement('p');
     msg.className = 'msg';
     registrationForm.appendChild(msg);
     Array.from($$(".registration-form input")).forEach((input) => input.value = "");
     if (type === "success") {
-        msg.innerHTML = `&check; &nbsp; ${msg}`;
+        msg.innerHTML = `&check; &nbsp; ${resMsg}`;
     } else {
-        msg.innerHTML = `&#9888; &nbsp;${msg}`;
+        msg.innerHTML = `&#9888; &nbsp;${resMsg}`;
         msg.style.background = "rgba(248, 20, 3, 0.658)"
     }
     setTimeout(() => {
@@ -64,7 +64,7 @@ registrationForm.addEventListener("submit", (e) => {
         .then(result => {
             if (result.message == "you have successfully registered for the event") {
                 displayMsg("success", result.message);
-            } else if (result.error.email == "user has already registered for this year's event") {
+            } else if (result.message == "registration failed") {
                 displayMsg("error", "You have already registered for this event");
             } else {
                 displayMsg("error", result.message);

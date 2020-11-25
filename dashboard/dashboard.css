@@ -140,7 +140,7 @@ main.container {
 }
 .filter-btn {
   margin: 0 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 1rem !important;
   border: none;
   background: var(--sec-color);
   color: var(--text-color);
@@ -149,7 +149,10 @@ main.container {
 .filter-wrap h4 {
   margin-right: 2rem;
 }
-.filter-btn.active {
+.filter-btn.active,
+.footer .active {
+  border-radius: 7px;
+  padding: 0.4rem 0.5rem;
   background: var(--active-bg);
   color: #001b18;
 }
@@ -193,9 +196,14 @@ table td {
   width: 95%;
   margin: 0.5rem auto;
 }
-.footer * {
+.footer button,
+.footer a,
+.footer p {
   color: var(--text-color);
   margin: 1rem 0.5rem;
+}
+.footer p {
+  display: inline;
 }
 .footer button {
   background: var(--pri-color);
@@ -204,6 +212,27 @@ table td {
   font-size: 0.8rem;
   padding: 0.4rem 0.9rem;
   border-radius: 6px;
+}
+.oops {
+  height: 50vh;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: #4d4d4d;
+  padding: 0 1rem;
+  width: 95%;
+  font-family: "Nunito";
+}
+.oops p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+.heart {
+  font-size: 6rem;
+  animation: heartbeat 0.6s infinite;
 }
 
 @media only screen and (max-width: 800px) {

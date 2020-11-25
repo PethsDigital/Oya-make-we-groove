@@ -19,7 +19,6 @@
   <body>
       <button class="dark-mode-btn"><i class="fa fa-moon"></i> Dark</button>
     <form class="login-form">
-
       <div class="img-wrap">
         <img src="../images/logo.png" alt="logo" />
       </div>
@@ -29,6 +28,7 @@
           <label for="email">Email:</label>
           <input
             type="email"
+            autocomplete= "username"
             id="email"
             placeholder="johndoe@gmail.com"
             required
@@ -39,6 +39,7 @@
           <label for="password">Password</label>
           <input
             type="password"
+            autocomplete= "current-password"
             placeholder="Enter password"
             id="password"
             required
@@ -50,6 +51,7 @@
         </div>
       </div>
     </form>
+    <script src="admin-js/login.js"></script>
     <script src="../js/darkmode.js"></script>
   </body>
 </html>
