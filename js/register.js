@@ -8,16 +8,16 @@ const btn = $(".register-btn");
 
 
 // function to handle msg
-function displayMsg(type, res) {
+function displayMsg(type, msg) {
     let msg;
     msg = document.createElement('p');
     msg.className = 'msg';
     registrationForm.appendChild(msg);
     Array.from($$(".registration-form input")).forEach((input) => input.value = "");
     if (type === "success") {
-        msg.innerHTML = `&check; &nbsp; ${res.message}`;
+        msg.innerHTML = `&check; &nbsp; ${msg}`;
     } else {
-        msg.innerHTML = '&#9888; &nbsp; An error occured, pls try again later';
+        msg.innerHTML = `&#9888; &nbsp;${msg}`;
         msg.style.background = "rgba(248, 20, 3, 0.658)"
     }
     setTimeout(() => {
@@ -62,13 +62,18 @@ registrationForm.addEventListener("submit", (e) => {
     })
         .then(res => res.json())
         .then(result => {
-            displayMsg("success", result);
-            console.log(formValues);
-            console.log(result)
+            if (result.message == "you have successfully registered for the event") {
+                displayMsg("success", result.message);
+            } else if (result.error.email == "user has already registered for this year's event") {
+                displayMsg("error", "You have already registered for this event");
+            } else {
+                displayMsg("error", result.message);
+            }
+            console.log(result);
         })
         .catch(err => {
-            console.log(err);
-            displayMsg("error");
+            console.log(`Error: ${err}`);
+            displayMsg("error", "Registration failed, try again later");
         })
         .finally(_ => {
             btn.textContent = "Register";
