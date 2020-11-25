@@ -27,12 +27,12 @@ let sortByCompany = $(".filter-btn.company");
 let sortBtn = Array.from($$(".filter-btn"));
 let pageCount = 1;
 let jsonData;
-// let url = `https://omwg.herokuapp.com/register?limit=10&page=${pageCount}`;
 
 
 // fetch function
 function fetchData() {
     let url = `./sample${pageCount}.json`;
+    // let url = `https://omwg.herokuapp.com/register?limit=10&page=${pageCount}`;
     return fetch(url)
         .then(res => res.json())
         .then(json => json.data)
@@ -109,6 +109,8 @@ sortByDate.addEventListener('click', sortDate);
 sortByName.addEventListener('click', _ => sortStr("firstName"));
 sortByCompany.addEventListener('click', _ => sortStr("companyName"));
 
+
+// navigation among pages
 let next = $(".next");
 let prev = $(".prev");
 let nextLinks = Array.from($$(".next-links a"));
