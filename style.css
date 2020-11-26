@@ -550,6 +550,7 @@ input,
   border: 1px solid grey;
   padding-left: 0.7rem;
   margin: 0.4rem 0;
+  color: var(--text-color);
   width: 100%;
   transition: 0.5s;
   background-color: var(--sec-color);

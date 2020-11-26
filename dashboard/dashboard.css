@@ -121,7 +121,7 @@ main.container {
   width: 100%;
   padding: 2rem 2rem 1.5rem 0;
 }
-.container .header button {
+.container .header .btn {
   background-color: var(--invert-border);
   color: var(--invert-bg);
   padding: 0.45rem 0.7rem;
@@ -149,8 +149,7 @@ main.container {
 .filter-wrap h4 {
   margin-right: 2rem;
 }
-.filter-btn.active,
-.footer .active {
+.filter-btn.active {
   border-radius: 7px;
   padding: 0.4rem 0.5rem;
   background: var(--active-bg);
@@ -191,6 +190,7 @@ table td {
   display: flex;
   justify-content: center;
   align-items: center;
+  user-select: none;
 }
 .footer {
   width: 95%;
@@ -205,7 +205,8 @@ table td {
 .footer p {
   display: inline;
 }
-.footer button {
+.footer button,
+.footer .active {
   background: var(--pri-color);
   color: #001b18;
   border: none;
@@ -215,11 +216,12 @@ table td {
 }
 .oops {
   height: 50vh;
+  min-height: 300px;
   display: none;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  color: #4d4d4d;
+  color: var(--text-color);
   padding: 0 1rem;
   width: 95%;
   font-family: "Nunito";
@@ -234,7 +236,17 @@ table td {
   font-size: 6rem;
   animation: heartbeat 0.6s infinite;
 }
-
+@media only screen and (max-width: 370px) {
+  .btn-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  .header .btn {
+    font-size: 0.6rem;
+    margin: 0.6rem;
+  }
+}
 @media only screen and (max-width: 800px) {
   nav.side-nav {
     display: block;
@@ -266,6 +278,9 @@ table td {
   }
   .filter-btn {
     margin: 0.5rem 0.1rem;
+  }
+  .filter-btn-wrap {
+    width: 60%;
   }
   .fa.fa-times,
   .fa.fa-bars {
