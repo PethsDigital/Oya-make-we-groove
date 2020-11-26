@@ -48,7 +48,7 @@ loginForm.addEventListener("submit", e => {
             console.log(response);
             if (response.message == "login successful") {
                 localStorage.setItem('oymg_token', response.data.token);
-                window.location.replace("http://127.0.0.1:5500/dashboard/dashboard.html");
+                window.location.replace("https://oymg.netlify.app/dashboard/dashboard.html");
                 msgDisplay("success", response.message);
             } else {
                 msgDisplay("error", response.message);
