@@ -442,11 +442,11 @@ section h3::after {
 .video {
   width: 100%;
   display: block;
-  height: 45vh;
+  height: 50vh;
   min-height: 300px;
   margin: 2rem auto;
   -o-object-fit: contain;
-  object-fit: contain;
+  object-fit: fill;
 }
 
 /* sponsors */
@@ -714,6 +714,9 @@ footer a:hover {
   }
   .gallery-wrap {
     height: 100%;
+  }
+  .video {
+    height: 45vh;
   }
 
   footer p {
