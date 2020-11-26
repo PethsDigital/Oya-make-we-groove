@@ -44,11 +44,11 @@ registrationForm.addEventListener("submit", (e) => {
     btn.disabled = true;
 
     let formValues = {
-        firstName: firstNameInput.value,
-        lastName: lastNameInput.value,
+        firstName: `${firstNameInput.value.charAt(0).toUpperCase()}${firstNameInput.value.substr(1)}`,
+        lastName: `${lastNameInput.value.charAt(0).toUpperCase()}${lastNameInput.value.substr(1)}`,
         email: emailInput.value,
-        companyName: companyInput.value,
-        jobTitle: jobInput.value
+        companyName: `${companyInput.value.charAt(0).toUpperCase()}${companyInput.value.substr(1)}`,
+        jobTitle: `${jobInput.value.charAt(0).toUpperCase()}${jobInput.value.substr(1)}`
     }
 
     // fetch request

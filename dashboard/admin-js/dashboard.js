@@ -56,8 +56,8 @@ sortBtn.forEach(btn => btn.addEventListener('click', e => {
 // template for data
 function UIDatatemplate(user) {
     let tr = document.createElement('tr');
-    tr.innerHTML = `<td>${user.firstName.charAt(0).toUpperCase()}${user.firstName.substr(1)}</td>
-                    <td>${user.lastName.charAt(0).toUpperCase()}${user.lastName.substr(1)}</td>
+    tr.innerHTML = `<td>${user.firstName}</td>
+                    <td>${user.lastName}</td>
                     <td>${user.email}</td>
                     <td>${user.companyName}</td>
                     <td>${user.jobTitle}</td>
