@@ -52,6 +52,10 @@ let navbar = $(".nav2");
 let navLink = $$(".nav2 a");
 let openToggle = $(".fa.fa-bars");
 
+openToggle.addEventListener('click', _ => navbar.style.cssText = 'clip-path: circle(100%);');
+Array.from(navLink).forEach(link => link.addEventListener('click', _ => navbar.style.cssText = " clip-path: circle(0% at 100% 0);"));
+
+
 // change nav background on window scroll
 window.addEventListener('scroll', _ => {
     let nav = $('.nav1');
@@ -67,25 +71,23 @@ window.addEventListener('scroll', _ => {
 })
 
 
-openToggle.addEventListener('click', _ => navbar.style.cssText = 'clip-path: circle(100%);');
-Array.from(navLink).forEach(link => link.addEventListener('click', _ => navbar.style.cssText = " clip-path: circle(0% at 100% 0);"));
 
 // form display
-let form = $('.registration-form');
-let overlay = $('.overlay');
-let registerBtn = $$('.register');
-let closeForm = $(".registration-form a");
+// let form = $('.registration-form');
+// let overlay = $('.overlay');
+// let registerBtn = $$('.register');
+// let closeForm = $(".registration-form a");
 
-Array.from(registerBtn).forEach(btn => btn.addEventListener('click', _ => {
-    form.style.transform = 'translate(-50%, -50%) scale(1)';
-    overlay.style.display = 'block';
-}));
+// Array.from(registerBtn).forEach(btn => btn.addEventListener('click', _ => {
+//     form.style.transform = 'translate(-50%, -50%) scale(1)';
+//     overlay.style.display = 'block';
+// }));
 
-closeForm.addEventListener('click', closeModal);
+// closeForm.addEventListener('click', closeModal);
 
-function closeModal() {
-    form.style.transform = 'translate(-50%, -50%) scale(0)';
-    overlay.style.display = 'none';
-}
+// function closeModal() {
+//     form.style.transform = 'translate(-50%, -50%) scale(0)';
+//     overlay.style.display = 'none';
+// }
 
 

@@ -156,9 +156,10 @@ i.fa-bars {
   height: 50%;
 }
 
+.details i,
 .details p {
-  margin: 1rem;
-  font-size: 0.8rem;
+  margin: 0.5rem 0.3rem;
+  font-size: 0.9rem;
 }
 .time-capsule {
   margin: 2rem 1.5rem;
@@ -289,7 +290,7 @@ section h3::after {
   content: "Connect";
 }
 .activity4::before {
-  content: "Dance";
+  content: "Groove";
 }
 .text {
   width: 90vw;
