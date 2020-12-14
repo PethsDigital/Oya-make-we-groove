@@ -25,26 +25,36 @@ const countDownTimer = function (time) {
         distTime
     };
 };
+let tLeft;
+// grab my time html elements to be updated here
+const days = $(".time.days");
+const hrs = $(".time.hrs");
+const min = $(".time.min");
+const sec = $(".time.sec");
 
 const updateUITime = function () {
-    let tLeft = countDownTimer('Dec 12, 2020 18:00:00 GMT+0000');
-
-    // grab my time html elements to be updated here
-    const days = $(".time.days");
-    const hrs = $(".time.hrs");
-    const min = $(".time.min");
-    const sec = $(".time.sec");
+    tLeft = countDownTimer('Dec 14, 2020 00:50:00 GMT+0000');
 
     sec.innerHTML = ('0' + tLeft.secsLeft).slice(-2);
     min.innerHTML = ('0' + tLeft.minsLeft).slice(-2);
     hrs.innerHTML = ('0' + tLeft.hrsLeft).slice(-2);
     days.innerHTML = ('0' + tLeft.daysLeft).slice(-2);
 
-    if (tLeft.distTime <= 0) clearInterval(timeInterval);
 }
 
 updateUITime();
-let timeInterval = setInterval(updateUITime, 1000);
+let timeInterval = setInterval(() => {
+    updateUITime();
+
+    if (tLeft.distTime <= 0) {
+        clearInterval(timeInterval);
+        sec.innerHTML = "00";
+        min.innerHTML = "00";
+        hrs.innerHTML = "00";
+        days.innerHTML = "00";
+    }
+
+}, 1000);
 // countdown code ends here
 
 // navbar toggle function
