@@ -76,7 +76,7 @@ header {
 }
 .navLink a {
   color: white;
-  transition: 0.5s;
+  transition: padding 0.3s;
 }
 .navLink,
 .nav-img,
@@ -95,6 +95,7 @@ header {
 i.fa-bars {
   display: none;
   font-size: 1.5rem;
+  margin-right: 0.5rem;
   color: white;
 }
 .nav2 i,
@@ -129,6 +130,7 @@ i.fa-bars {
 .dark-mode-btn i {
   font-size: 1rem;
 }
+
 .header-btn {
   background-color: black;
   color: #7cfef0;
@@ -139,8 +141,8 @@ i.fa-bars {
   color: black;
 }
 .nav1 .navLink a:hover {
-  padding-bottom: 0.6rem;
-  border-bottom: 1px solid #7cfef0;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #7cfef0;
   color: #7cfef0;
 }
 .header-content {
@@ -615,7 +617,7 @@ footer a:hover {
     padding: 1rem 0.5rem;
   }
   .nav-img-wrap {
-    width: 65%;
+    width: 62%;
     height: 70px;
   }
   .nav-img {
